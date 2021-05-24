@@ -1,0 +1,139 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Mars Rover API",
+        "version": "1.0"
+    },
+    "paths": {
+        "/api/v1/plateau": {
+            "get": {
+                "summary": "Get an plateau",
+                "responses": {
+                    "200": {
+                        "description": "Show an Plateau Response"
+                    }
+                }
+            },
+            "post": {
+                "summary": "Create an plateau",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "x": {
+                                        "description": "Horizontal Coordinate",
+                                        "type": "integer",
+                                        "example": ""
+                                    },
+                                    "y": {
+                                        "description": "Vertical Coordinate",
+                                        "type": "integer",
+                                        "example": ""
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Create Plateau Response"
+                    }
+                }
+            }
+        },
+        "/api/v1/rover": {
+            "get": {
+                "summary": "Get an rover",
+                "responses": {
+                    "200": {
+                        "description": "Show an Rover Response"
+                    }
+                }
+            },
+            "post": {
+                "summary": "Create an rover",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "plateau_id": {
+                                        "description": "Plateau",
+                                        "type": "integer",
+                                        "example": ""
+                                    },
+                                    "x": {
+                                        "description": "Horizontal Coordinate",
+                                        "type": "integer",
+                                        "example": ""
+                                    },
+                                    "y": {
+                                        "description": "Vertical Coordinate",
+                                        "type": "integer",
+                                        "example": ""
+                                    },
+                                    "direction": {
+                                        "description": "Direction",
+                                        "type": "string",
+                                        "example": ""
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Create Rover Response"
+                    }
+                }
+            }
+        },
+        "/api/v1/rover-state": {
+            "get": {
+                "summary": "Get an rover state",
+                "responses": {
+                    "200": {
+                        "description": "Show an Rover State Response"
+                    }
+                }
+            },
+            "post": {
+                "summary": "Move an rover",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "rover_id": {
+                                        "description": "Rover",
+                                        "type": "integer",
+                                        "example": ""
+                                    },
+                                    "commands": {
+                                        "description": "Commands",
+                                        "type": "string",
+                                        "example": ""
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Move Rover Response"
+                    }
+                }
+            }
+        }
+    },
+    "security": [
+        []
+    ]
+}
